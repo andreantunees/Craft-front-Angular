@@ -1,0 +1,40 @@
+<div class="container">
+    <form id="formCheck" [formGroup]="checkForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group">
+                <label>PostCode</label>
+                <input type="text" class="form-control" formControlName="postCode" [(ngModel)]="postCodeModel">
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button form="formCheck" type="submit" class="btn btn-primary" [disabled]="!validPostCode()" >Find</button>
+        </div>
+
+    </form>
+
+    <table class="table table-striped" *ngIf="validData()">
+        <thead>
+            <tr>
+                <th> PostCode </th>
+                <th> Lat </th>
+                <th> Long </th>
+                <th> Country </th>
+                <th> Region </th>
+                <th> Distance(km) </th>
+                <th> Distance(miles) </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ postcode.code }}</td>
+                <td>{{ postcode.lat }}</td>
+                <td>{{ postcode.long }}</td>
+                <td>{{ postcode.country }}</td>
+                <td>{{ postcode.region }}</td>
+                <td>{{ postcode.distanceKm }}</td>
+                <td>{{ postcode.distanceMiles }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

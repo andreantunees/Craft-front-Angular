@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table table-striped" *ngIf="existsData()">
+        <thead>
+            <tr>
+                <th> PostCode </th>
+                <th> Lat </th>
+                <th> Long </th>
+                <th> Country </th>
+                <th> Region </th>
+                <th> Distance(km) </th>
+                <th> Distance(miles) </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let loc of auxiliar">
+                <td>{{loc.code}}</td>
+                <td>{{loc.lat}}</td>
+                <td>{{loc.long}}</td>
+                <td>{{loc.country}}</td>
+                <td>{{loc.region}}</td>
+                <td>{{loc.distanceKm}}</td>
+                <td>{{loc.distanceMiles}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
